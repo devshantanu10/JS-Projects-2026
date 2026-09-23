@@ -4,9 +4,7 @@
   
 }
 
-.card{
 
-}
 
 
 .container{
@@ -86,6 +84,7 @@ ul li{
     padding:12px 8px 12px 50px ;
     user-select: none;
     cursor: pointer;
+    position: relative;
 }
 
 ul li::before{
@@ -95,6 +94,43 @@ ul li::before{
     height: 28px;
     width: 28px;
     border-radius: 50%;
-    ba
+    background-image: url(Unchecked\ free\ icons\ designed\ by\ pocike.jpg);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+
     
+} 
+
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
 }
+
+
+ul li.checked::before{
+    background-image: url(checked\ img.jpg);
+
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px ;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%
+
+}
+
+
+ul li span:hover{
+    background: #edeef0;
+
+} 
