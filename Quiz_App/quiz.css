@@ -1,4 +1,17 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   min-height:100vh;
+   background: linear-gradient(360deg, #150187,#75c3ff);
+} 
+
+h1{
+    font-size: 50px;
+    text-align: center;
+    padding-top: 50px;
+
 }
