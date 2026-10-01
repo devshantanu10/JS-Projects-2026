@@ -20,5 +20,16 @@ body{
 .app h1{
     font-weight: 25px;
     color: #001e4d;
-    
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+
+}
+.quiz{
+    padding: 20px 0;
+}
+.quiz h2{
+
+    font-size: 10px;
+    color: ;
 }
