@@ -17,4 +17,32 @@ const questions = [
       { text: "Sri Lanka", correct: false },
     ],
   },
-];
+]; 
+
+
+// assign element id 
+
+const question = document.getElementById("question");
+const answerButtons = document.getElementById("answer-buttons");
+const nextButton = document.getElementById("next-btn");
+
+let curretIndex = 0;
+let score = 0;
+
+function startsQuiz(){
+
+    curretIndex = 0;
+    score = 0;
+    nextButton.textContent = "Next";
+    showQuestion();   
+}
+
+
+function showQuestion() {
+    resetState();
+    const current = questions[currentIndex];
+    question.textContent = `${currentIndex + 1}. ${current.question}`;
+
+    
+
+}
