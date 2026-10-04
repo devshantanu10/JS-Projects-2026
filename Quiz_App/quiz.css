@@ -5,7 +5,7 @@
     box-sizing:border-box;
 }
 body{
-    background: #001e4d;
+    background: #a0c0f4;
 }
 .app{
     background:#FFF;
@@ -19,7 +19,7 @@ body{
 
 .app h1{
     font-weight: 25px;
-    color: #001e4d;
+    color: #01317e;
     font-weight: 600;
     border-bottom: 1px solid #333;
     padding-bottom: 30px;
@@ -30,6 +30,29 @@ body{
 }
 .quiz h2{
 
-    font-size: 10px;
-    color: ;
+    font-size: 18px;
+    color: #001e4d;
+    font-weight: 600;
+}
+
+.btn{
+
+    background: #fff;
+    color:#222;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #222;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.2s ease, box-shadow 0.25s ease;
+
+    
+}
+
+.btn:hover{
+    background-color: #001e4d;
+    color: white;
 }
