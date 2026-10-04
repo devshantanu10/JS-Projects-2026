@@ -52,6 +52,17 @@ body{
     
 }
 
+#next-btn{
+    width: 65px;
+    background: hwb(243 15% 0%);
+    color: white;
+    font-weight: bold;
+    padding: 2px;
+    display: none;
+    border: none;
+
+}
+
 .btn:hover{
     background-color: #001e4d;
     color: white;
