@@ -8,6 +8,8 @@ const questions = [
       { text: "Giraffe", correct: false },
     ],
   },
+
+  
   {
     question: "Which is the smallest country in the world?",
     answers: [
@@ -17,6 +19,17 @@ const questions = [
       { text: "Sri Lanka", correct: false },
     ],
   },
+
+    {
+    question: "Who is trhe best player? ",
+    answers: [
+      { text: "Messi", correct: true },
+      { text: "Ronaldo", correct: false },
+      { text: "Zalatan", correct: false },
+      { text: "neymar", correct: false },
+    ],
+  },
+  
 ]; 
 
 
@@ -102,5 +115,35 @@ function showScore() {
 }
 
 startsQuiz();
+
+function startsQuiz() {
+  let currentIndex = 0;
+  score = 0;
+  nextButton.textContent = "next";
+  showQuestion();
+}
+
+
+function showQuestion () {
+  resetState();
+  const current = questions[curretIndex];
+  question.textContent = `${curretIndex + 1} . ${current.question}`
+
+  current.answers.forEach((answer) => {
+    const button = document.createElement("button");
+    button.textContent = answer.text;
+    button.classList.add("btn");
+    if(answer.correct) button.dataset.correct = "true";
+    button.addEventListener("click" , selectAnswer)
+    answerButtons.appendChild(button);
+
+
+
+  })
+}
+
+
+
+
 
 
