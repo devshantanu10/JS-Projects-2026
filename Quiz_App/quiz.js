@@ -40,9 +40,67 @@ function startsQuiz(){
 
 function showQuestion() {
     resetState();
-    const current = questions[currentIndex];
-    question.textContent = `${currentIndex + 1}. ${current.question}`;
+    const current = questions[curretIndex];
+    question.textContent = `${curretIndex + 1}. ${current.question}`;
 
-    
+    current.answers.forEach((answer) => {
+    const button = document.createElement("button");
+    button.textContent = answer.text;
+    button.classList.add("btn");
+    if(answer.correct) button.dataset.correct = "true";
+    button.addEventListener("click" , selectAnswer);
+    answerButtons.appendChild(button);
+})
 
+} 
+ 
+function resetState(){
+  nextButton.style.display = "none";
+  while(answerButtons.firstChild){
+    answerButtons.removeChild(answerButtons.firstChild);
+  }
 }
+
+function selectAnswer(e) {
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+
+    if (isCorrect) {
+        selectedBtn.classList.add("correct");
+        score++;
+    } else {
+        selectedBtn.classList.add("incorrect");
+    }
+
+    // Disable all buttons + highlight the correct one
+    Array.from(answerButtons.children).forEach(button => {
+        if (button.dataset.correct === "true") button.classList.add("correct");
+        button.disabled = true;
+    });
+
+    nextButton.style.display = "block";  // show Next btn
+}
+
+
+nextButton.addEventListener("click", () => {
+    curretIndex++;
+    if (curretIndex < questions.length) {
+        showQuestion();
+    } else {
+        showScore();
+    }
+});
+
+
+function showScore() {
+    resetState();
+    question.textContent = `You scored ${score} out of ${questions.length}! 🎉`;
+    nextButton.textContent = "Play Again";
+    nextButton.style.display = "block";
+
+    nextButton.addEventListener("click", startsQuiz, { once: true });
+}
+
+startsQuiz();
+
+
