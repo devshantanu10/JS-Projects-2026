@@ -36,6 +36,8 @@ function startFlashcards (){
 
 function showFlashCards() {
     const current = questions[currentIndex];
+     question.textContent = `${curretIndex + 1}. ${current.question}`;
+     const answerButtons = document.getElementById("answer");
 }
 
 
