@@ -1,45 +1,60 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlashCard learning App</title>
+    <title>Flashcard Learning App</title>
     <link rel="stylesheet" href="card.css">
+    <script src="card.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Flash Card learning App</h1>
-        <p>Learn with card, enhance your knowledge</p>
+        <h1>Flashcard Learning App</h1>
+        <p class="slogan-p">
+            Learn with cards, enhance your knowledge.
+        </p>
     </header>
 
     <main>
-        <section class="flashcard-container">
+        <section class="flashcard-container"
+                 aria-label="Flashcards">
 
-            <p id="card-container">card 1 of 3</p>
+            <p id="card-container" aria-live="polite">
+                Card 1 of 3
+            </p>
 
             <div class="flashcard">
-                <h id="question">Your question will appear here</h>
+                <h2 id="question">
+                    Your question will appear here
+                </h2>
 
-                <p id="answer" hidden>Your answer will appear here</p>
+                <p id="answer" hidden>
+                    Your answer will appear here
+                </p>
             </div>
+
             <div class="card-actions">
-                <button id="show-answer-btn" type="button">Show answer</button>
+                <button id="show-answer-btn" type="button">
+                    Show Answer
+                </button>
             </div>
 
-            <div class="navigation">
-                <button id="prev-btn" type="button" disabled>Previous</button>
+            <nav class="navigation" aria-label="Flashcard navigation">
+                <button id="prev-btn" type="button" disabled>
+                    Previous
+                </button>
 
-                <button id="next-btn" type="button">Next</button>
-            </div>
+                <button id="next-btn" type="button">
+                    Next
+                </button>
+            </nav>
+
         </section>
     </main>
 
     <footer>
-        <p>Keep Learning keep Growing</p>
+        <p>Keep Learning, Keep Growing.</p>
     </footer>
-
-    <script src="card.js"></script>
-     
-    
 </body>
-</html
+</html>
