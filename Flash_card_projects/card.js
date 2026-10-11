@@ -6,7 +6,7 @@ const questions = [
   },
   {
     question: "Who is the current prime minister of Nepal?",
-    answer: [{ text: "Verify the current officeholder" }],
+    answer: [{ text: "Balendra Shah" }],
   },
 ];
 
@@ -45,4 +45,20 @@ showAnswerButton.addEventListener("click", () => {
     const current = questions[currentIndex];
     answer.textContent = current.answer[0].text;
     answer.hidden = false;
+});
+
+
+nextButton.addEventListener("click" , () => {
+
+    if(currentIndex < questions.length - 1){
+        currentIndex++;
+
+        const current = questions[currentIndex];
+
+  question.textContent =
+    `${currentIndex + 1}. ${current.question}`;
+
+
+
+    }
 })
