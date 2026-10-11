@@ -1,40 +1,48 @@
+
 const questions = [
   {
-    question: "Who has won highest number of ballondor",
-    answer: [{ text: Messi }],
+    question: "Who has won the highest number of Ballon d'Or awards?",
+    answer: [{ text: "Lionel Messi" }],
   },
-
   {
-    question: "Who is the current prime minister of Nepal",
-    answer: [{ text: Balendra - Shah }],
+    question: "Who is the current prime minister of Nepal?",
+    answer: [{ text: "Verify the current officeholder" }],
   },
 ];
 
 const question = document.getElementById("question");
-const answerButtons = document.getElementById("answer");
+const answer = document.getElementById("answer");
 const nextButton = document.getElementById("next-btn");
+const showAnswerButton =  document.getElementById("show-answer-btn");
 
 let currentIndex = 0;
 let isAnswerVisible = false;
-nextButton.textContent = "Next";
-showFlashCards();
 
-function resetState(){
-    answer.textContent = "";
-    isAnswerVisible = false;
+function resetState() {
+  answer.textContent = "";
+  answer.hidden = true;
+  isAnswerVisible = false;
 }
 
 function startFlashcards() {
   currentIndex = 0;
-  isAnswerVisible = false;
   nextButton.textContent = "Next";
+  showFlashCards();
 }
 
 function showFlashCards() {
-    resetState();
-  const current = questions[currentIndex];
-  question.textContent = `${curretIndex + 1}. ${current.question}`;
+  resetState();
 
+  const current = questions[currentIndex];
+
+  question.textContent =
+    `${currentIndex + 1}. ${current.question}`;
 }
 
 startFlashcards();
+
+showAnswerButton.addEventListener("click", () => {
+    const current = questions[currentIndex];
+    answer.textContent = current.answer[0].text;
+    answer.hidden = false;
+})
