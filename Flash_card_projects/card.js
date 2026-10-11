@@ -13,6 +13,7 @@ const questions = [
 const question = document.getElementById("question");
 const answer = document.getElementById("answer");
 const nextButton = document.getElementById("next-btn");
+const prevButton = document.getElementById("prev-btn");
 const showAnswerButton =  document.getElementById("show-answer-btn");
 
 let currentIndex = 0;
@@ -37,6 +38,10 @@ function showFlashCards() {
 
   question.textContent =
     `${currentIndex + 1}. ${current.question}`;
+    nextButton.textContent =
+    currentIndex === questions.length - 1 ? "Finish" : "Next";
+
+    prevButton.disabled = currentIndex === 0;
 }
 
 startFlashcards();
@@ -45,6 +50,7 @@ showAnswerButton.addEventListener("click", () => {
     const current = questions[currentIndex];
     answer.textContent = current.answer[0].text;
     answer.hidden = false;
+    currentIndex === questions.length - 1 ? "Finish" : "Next";
 });
 
 
@@ -53,12 +59,17 @@ nextButton.addEventListener("click" , () => {
     if(currentIndex < questions.length - 1){
         currentIndex++;
 
-        const current = questions[currentIndex];
-
-  question.textContent =
-    `${currentIndex + 1}. ${current.question}`;
+        showFlashCards();
 
 
 
+    }
+})
+
+prevButton.addEventListener("click" , () => {
+    if( currentIndex > 0){
+        currentIndex--;
+        showFlashCards();
+        
     }
 })
